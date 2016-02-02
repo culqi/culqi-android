@@ -17,16 +17,16 @@ Adicionalmente, se podrá realizar las siguientes operaciones desde tu servidor:
 Consultar una Venta --> obtendrás el estado de la venta y sus datos.
 Anular una Venta --> se procesará la anulación siempre y cuando la venta esté autorizada.
 
-##2.Requerimientos:
+## 2.Requerimientos
 
 Nuestro SDK es compatible con aplicaciones de Android 4.0 y superior.
 
-##3.Instalación:
+## 3.Instalación
 	
 #### Instalación manual
 Hemos publicado el SDk como una librería estática que puedes copiar directamente sin alguna herramienta adicional.
 
-##4. Comercio de prueba
+## 4. Comercio de prueba
 
 Para facilitarle la implementación a nuestro Entorno de Integración, hemos creado un comercio de prueba denominado "Comercio Demo", el cual considera el logotipo de Culqi, asi como los siguientes datos que deberás utilizar en los próximos pasos.
 
@@ -43,10 +43,10 @@ MasterCard | 5111 1111 1111 1118 | 06/2020 | 472
 Amex | 3712 121212 12122 | 11/2017 | 2841
 Diners | 3600 121212 1210 | 04/2018 | 964
 
-Si necesitas alguna ayuda u orientación, puedes comunicarte con nosotros vía email a soporte@culqi.com.Primero, tendrás que configurar tu código de comercio. 
-Recomendamos hacer esto en el método `application:didFinishLaunchingWithOptions:` del AppDelegate de tu aplicación para que quede configurado durante todo el ciclo de vida de tu aplicación.
+Si necesitas alguna ayuda u orientación, puedes comunicarte con nosotros vía email a soporte@culqi.com. 
+Primero, tendrás que configurar tu código de comercio. 
 
-##5.Configuración:
+## 5.Configuración
 
 #### Código Ejemplo Java
 
@@ -70,16 +70,16 @@ entorno | Entorno de Culqi a la que te conectarás.
  | `Entorno de Integración: Culqi.integracion` 
  | `Entorno de Producción: Culqi.produccion`
 
-##6. Operación de Autorización
+## 6. Operación de Autorización
 
-###6.1 Creando una venta
+### 6.1 Creando una venta
 
 Este paso es para pre-registrar y validar los datos de la venta del Comercio en la Pasarela de Pagos de Culqi, antes de solicitar los datos de la tarjeta al cliente. Si la respuesta es satisfactoria se debe proseguir con el siguiente paso, caso contrario, usted debe revisar el código y mensaje de la respuesta que se le brinde.
 
 Para crear una nueva venta debes de seguir las indicaciones encontradas en la sección Creando una venta de:
-- [PHP](http://) 
-- [JAVA](http://) 
-- [API](http://) 
+- [PHP](https://github.com/culqi/Culqi-PHP#61-creando-una-venta) 
+- [JAVA](https://github.com/culqi/culqi-java#61-creando-una-venta) 
+- [API](https://github.com/culqi/culqi-api) 
 
 El resultado de esa operación es una cadena de información cifrada que debes de enviar a tu aplicación para poder procesar la venta y mostrar el formulario de pago, explicada a continuación.
 
