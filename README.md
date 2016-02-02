@@ -52,6 +52,7 @@ Recomendamos hacer esto en el método `application:didFinishLaunchingWithOptions
 
 ```java
 ...
+i.putExtra("entorno", Culqi.integracion);
 i.putExtra("codigo_comercio", "demo");
 i.putExtra("informacion_venta", {informacion_venta});
 ...
@@ -63,8 +64,9 @@ Estos son los parámetros de configuración:
 
 Parámetro | Descripción
 --------- | -----------
-CodigoComercio | Código del comercio asignado por Culqi.
-Entorno | Entorno de Culqi a la que te conectarás. 
+codigo_comercio | Código del comercio asignado por Culqi.
+informacion_venta | Código del comercio asignado por Culqi.
+entorno | Entorno de Culqi a la que te conectarás. 
  | `Entorno de Integración: Culqi.integracion` 
  | `Entorno de Producción: Culqi.produccion`
 
