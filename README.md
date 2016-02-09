@@ -16,3 +16,10 @@ Hay un aplicación de ejemplo en este repositorio:
 
 Una vez ejecutada, puedes probar la aplicación usando la tarjeta (4111 1111 1111 1111, con fecha de vencimiento 09/20 y CVV 123).
 
+## ¿Necesitas ayuda?
+
+Estamos felices de resolver cualquier duda o pregunta que tengas.
+
+Escribenos a soporte@culqi.com.
+
+Respondemos todas tus dudas en máximo 24 horas.
