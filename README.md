@@ -9,6 +9,9 @@ Nuestro SDK es compatible con aplicaciones para Android 4.0 y superior.
 
 Tenemos una [guía](https://www.culqi.com/docs) que explica desde la creación de una venta, la instalación, la configuración , el procesamiento de la venta y más.
 
+## Flujo de pago
+![flujo](https://integ.culqi.com/mapa.png)
+
 ## Aplicación de ejemplo
 
 Hay un aplicación de ejemplo en este repositorio:
