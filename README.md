@@ -1,6 +1,6 @@
 # Culqi Android
 
-El Culqi Android hace sencillo aceptar tarjetas dentro de tu aplicación, usando un formulario web de pago.
+Culqi hace sencillo aceptar tarjetas dentro de tu aplicación, usando un formulario web de pago.
 
 ## Requirimientos
 Es compatible con aplicaciones para Android 4.0 y superior.
