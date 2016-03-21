@@ -1,9 +1,9 @@
-# Culqi Android SDK
+# Culqi Android
 
-El Culqi Android SDK hace sencillo aceptar tarjetas dentro de tu aplicación, usando un formulario web de pago.
+El Culqi Android hace sencillo aceptar tarjetas dentro de tu aplicación, usando un formulario web de pago.
 
 ## Requirimientos
-Nuestro SDK es compatible con aplicaciones para Android 4.0 y superior.
+Es compatible con aplicaciones para Android 4.0 y superior.
 
 ## Integración
 
