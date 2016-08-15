@@ -141,13 +141,13 @@ public class MainActivity extends AppCompatActivity {
 
         terminos   = (CheckBox)findViewById(R.id.terminos);
 
-        nombres.setText("Carlos");
-        apellidos.setText("Morales");
+        nombres.setText("Culqi");
+        apellidos.setText("Culqi");
         ciudad.setText("Lima");
         pais.setText("PE");
-        telefono.setText("991324703");
-        direccion.setText("Avenida Arequipa 1155");
-        correo.setText("carlos.morales@culqi.com");
+        telefono.setText("999999999");
+        direccion.setText("Av. Arequipa 1155 Urb. Santa Beatriz - Lima");
+        correo.setText("culqi@culqi.com");
 
     }
 
@@ -264,7 +264,7 @@ public class MainActivity extends AppCompatActivity {
                                     //Initialize the Button object with the data from the 'webviewdialog.xml' file
 
                                     WebView wv = (WebView) webViewDialog.findViewById(R.id.wb_webview);
-                                    wv.loadUrl("https://integ-pago.culqi.com/api/v1/formulario/movil/2/" + "demo" + "/" + finalRespuestaDemo1.getInformacion_venta());
+                                    wv.loadUrl("https://integ-pago.culqi.com/api/v1/formulario/movil/2/" + "5foGNkdG04MR" + "/" + finalRespuestaDemo1.getInformacion_venta());
                                     WebSettings webSettings = wv.getSettings();
                                     webSettings.setJavaScriptEnabled(true);
                                     webSettings.setBuiltInZoomControls(true);
