@@ -81,6 +81,10 @@ Parámetro | Descripción |
 ---------- | ----------- | -----------
 codigo_respuesta | Es el código de respuesta de la venta, puedes ver los códigos de respuesta en la [documentación.](https://www.culqi.com/docs)
 
+### Pase a producción
+
+Aquí encontrarás toda la información necesaria para empezar a cargar tarjetas reales en nuestro [Entorno de Producción](http://beta.culqi.com/produccion/).
+
 ## ¿Necesitas ayuda?
 
 Estamos felices de resolver cualquier duda o pregunta que tengas.
