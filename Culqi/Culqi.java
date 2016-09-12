@@ -47,121 +47,17 @@ import java.security.SecureRandom;
 import java.util.HashMap;
 import java.util.Map;
 
-public class MainActivity extends AppCompatActivity {
+public class Culqi {
 
-    private SecureRandom random = new SecureRandom();
-
-    Integer pedidoNum;
-
-    EditText nombres;
-    EditText apellidos;
-    EditText ciudad;
-    EditText pais;
-    EditText telefono;
-    EditText direccion;
-    EditText correo;
-    EditText monto;
-
-    CheckBox terminos;
-
-    String producto;
-    String montoVenta;
-
-    AlertDialog alertDialog;
-
-    Dialog webViewDialog;
-
-    public MainActivity() {
-        webViewDialog = null;
-    }
-
-    public String randomOrder() {
-        return new BigInteger(16, random).toString(4);
-    }
-
-    public static String CERRAR_FORMULARIO = "com.domain.action.CERRAR_FORMULARIO";
-
-    private BroadcastReceiver broadcastReceiver = new BroadcastReceiver() {
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            //UI Updates
-            String respuesta = intent.getStringExtra("RESPUESTA");
-
-            System.out.print("Terminó el procesamiento - Respuesta:" + respuesta);
-
-            //responseToParent(respuesta);
-            webViewDialog.cancel();
-            CharSequence text = respuesta;
-            int duration = Toast.LENGTH_SHORT;
-
-            Intent respuestaVenta = new Intent(MainActivity.this, RespuestaCompra.class);
-            respuestaVenta.putExtra("respuesta_venta", respuesta );
-
-            MainActivity.this.startActivity(respuestaVenta);
-        }
-
-    };
-
-    @Override
-    public void onResume() {
-        super.onResume();
-
-        //UI Updates
-
-        IntentFilter filter = new IntentFilter();
-        filter.addAction(CERRAR_FORMULARIO);
-        this.registerReceiver(broadcastReceiver, filter);
-    }
-
-    @Override
-    public void onPause() {
-        super.onPause();
-
-        this.unregisterReceiver(broadcastReceiver);
-    }
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-
-        Intent intent = getIntent();
-        producto = intent.getStringExtra("producto");
-        montoVenta = intent.getStringExtra("monto");
-
-        nombres   = (EditText)findViewById(R.id.nombre);
-        apellidos   = (EditText)findViewById(R.id.apellido);
-        ciudad   = (EditText)findViewById(R.id.ciudad);
-        pais   = (EditText)findViewById(R.id.pais);
-        telefono   = (EditText)findViewById(R.id.telefono);
-        direccion   = (EditText)findViewById(R.id.direccion);
-        correo   = (EditText)findViewById(R.id.correo);
-
-        terminos   = (CheckBox)findViewById(R.id.terminos);
-
-        nombres.setText("Culqi");
-        apellidos.setText("Culqi");
-        ciudad.setText("Lima");
-        pais.setText("PE");
-        telefono.setText("999999999");
-        direccion.setText("Av. Arequipa 1155 Urb. Santa Beatriz - Lima");
-        correo.setText("culqi@culqi.com");
-
-    }
-
-    public static void execute() {
-
-    }
-
-
-    public static HttpResponse makeRequest(String uri, String json) {
+    public String merchantCode;
+    
+    public static HttpResponse makeRequest(String uri, String json, String merchantCode) {
        try {
             HttpPost httpPost = new HttpPost(uri);
             httpPost.setEntity(new StringEntity(json));
             httpPost.setHeader("Accept", "application/json");
             httpPost.setHeader("Content-type", "application/json");
+            httpPost.setHeader("Authorization", "Bearer " + auth);
             return new DefaultHttpClient().execute(httpPost);
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
@@ -174,28 +70,7 @@ public class MainActivity extends AppCompatActivity {
      }
 
 
-   public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == 1) {
-            if(resultCode == RESULT_OK){
-
-                String stredittext=data.getStringExtra("respuesta_venta");
-
-                Context context = getApplicationContext();
-                CharSequence text = stredittext;
-                int duration = Toast.LENGTH_SHORT;
-
-                Intent respuestaVenta = new Intent(MainActivity.this, RespuestaCompra.class);
-                respuestaVenta.putExtra("respuesta_venta", stredittext );
-
-                MainActivity.this.startActivity(respuestaVenta);
-            }
-        }
-    }
-
-    public void cargarFormulario(View view) throws IOException, JSONException {
-
-
+    public void createToken() throws IOException, JSONException {
 
         Thread thread = new Thread(new Runnable(){
             @Override

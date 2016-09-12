@@ -1,94 +1,103 @@
 # Culqi Android
 
-Culqi hace sencillo aceptar tarjetas dentro de tu aplicación, usando un formulario web de pago.
+[![Latest Stable Version](https://poser.pugx.org/culqi/culqi-php/v/stable)](https://packagist.org/packages/culqi/culqi-php)
+[![Total Downloads](https://poser.pugx.org/culqi/culqi-php/downloads)](https://packagist.org/packages/culqi/culqi-php)
+[![License](https://poser.pugx.org/culqi/culqi-php/license)](https://packagist.org/packages/culqi/culqi-php)
 
-## Requirimientos
-Es compatible con aplicaciones para Android 4.0 y superior.
+Biblioteca Android oficial de Culqi, pagos simples en tu sitio web.
 
-## Integración
+> **Importante**: Hemos descontinuado el soporte a la versión 1.0 de Culqi API para centrarnos en la nueva versión. Si estabas trabajando con la anterior versión de esta biblioteca puedes entrar al branch [1.1.1](https://github.com/culqi/culqi-php/tree/1.1.1).
 
-Tenemos una [guía](https://www.culqi.com/docs) que explica desde la creación de una venta, la instalación, la configuración , el procesamiento de la venta y más.
+**Nota**: Esta biblioteca trabaja con la [v1.2](https://culqi.api-docs.io/v1.2) de Culqi API.
 
-## Flujo de pago
-![flujo](https://integ.culqi.com/mapa.png)
 
-## Aplicación de ejemplo
+## Requisitos
 
-Hay un aplicación de ejemplo en este repositorio:
-- Culqi Ejemplo Android (Formulario Web) muestra una integración rápida usando el formulario web de pago de Culqi.
+* Android 4.0 o superior.
+* Credenciales de comercio Culqi (1).
 
-Hemos puesto a disposisición un servicio web en el entorno de integración para que puedan realizar pruebas en los dispositivos móviles, si todavía no tienes terminado el backend de la aplicación.
+(1) Debes registrarte [aquí](https://integ-panel.culqi.com/#/registro). Luego, crear un comercio y estando en el panel, acceder a Desarrollo > [***API Keys***](https://integ-panel.culqi.com/#/panel/comercio/desarrollo/llaves).
 
-### Creación de una venta
-Método | Entorno | URL |
----------- | ----------- | -----------
-POST | Integración | https://integ-com.culqi.com/venta/movil |
+![alt tag](http://i.imgur.com/NhE6mS9.png)
 
-Para crear una venta debes de enviar un JSON con la información de la venta:
+## Instalación
 
-### Parámetros de envío
+### Manualmente
 
-EL JSON que vas a enviar debe de contener los siguientes parámetros.
+Clonar el repositorio o descargar el código fuente
 
-Nombre | Parámetro | Descripción | Tipo | Tamaño Mínimo| Tamaño Máximo
---------- | --------- | ------- | ----------- | ----------- | -----------
-Moneda | moneda | Código [ISO-4217](https://es.wikipedia.org/wiki/ISO_4217) de la Moneda de la venta . Ej: Nuevos Soles: PEN , Dólares: USD | N | 3 caracteres | 3 caracteres
-Monto | monto | Monto de la venta, sin punto decimal Ej: 100.25 sería 10025 | N | 3 caracteres | 9 caracteres
-Descripción | descripcion | Breve descripción del producto o servicio brindado. | AN | 5 caracteres | 80 caracteres
-Correo Electrónico | correo_electronico | Dirección del correo electrónico del cliente. | AN | 5 caracteres | 50 caracteres
-País | pais | Código [ISO-3166-1 Alfa 2](https://es.wikipedia.org/wiki/ISO_3166-1) del País del cliente. Ej. Perú : PE | A | 2 caracteres | 2 caracteres
-Ciudad | ciudad | Ciudad del cliente. | A | 2 caracteres | 30 caracteres
-Dirección | direccion | Dirección del cliente. | AN | 5 caracteres | 100 caracteres
-Teléfono | telefono | Número de teléfono del cliente. | N | 5 caracteres  | 15 caracteres
-ID Usuario | id_usuario_comercio | Identificador del usuario. | N | 2 caracteres | 15 caracteres
-Nombres | nombres | Nombres del cliente. | A | 2 caracteres | 50 caracteres
-Apellidos | apellidos | Apellidos del cliente. | A | 2 caracteres | 50 caracteres
+```bash
+$ git clone git@github.com:culqi/culqi-android.git
+```
 
-### Parámetros de respuesta
+Ahora, incluir la carpeta `Culqi"` en tu proyecto. Debes hacer el llamado correctamente a la carpeta y/o archivo dependiendo de tu estructura.
 
-Una vez enviada la información recibirás un JSON como respuesta:
+```java
+...
+import com.culqi.*
+...
+```
 
-Nombre | Parámetro | Descripción 
---------- | --------- | ------- 
-Código Respuesta | respuesta | Código de respuesta de la creación de la venta, solo si es **"venta_registrada"** debes de mostrar el formulario de pago, de lo contrario ocurrirán errores visibles para el usuario.
-Mensaje Respuesta | mensaje_respuesta | Respuesta detallada de la creación de la venta.
-Información Venta | informacion_venta | Cadena cifrada que debes usar para cargar el formulario de Culqi.
+## Modo de uso
 
-Luego de haber creado la venta debes de cargar el formulario de pago y procesar la venta, siguiendo las indicaciones de la [documentación.](https://www.culqi.com/docs) Puedes usar el mismo servicio web para poder procesar la respuesta de Culqi.
+Inicialmente hay que configurar la credencial `merchantCode`:
 
-### Procesamiento de la respuesta
-Método | Entorno | URL |
----------- | ----------- | -----------
-POST | Integración | https://integ-com.culqi.com/venta/respuesta |
+```objective-c
+// Configurar tu Código de Comercio
+    culqi.setMerchantCode = "<Ingresa aquí tu código de comercio>";
 
-Para descifrar la respuesta cifrada de Culqi debes de enviar un JSON con la respuesta.
 
-### Parámetros de envío
+```
 
-EL JSON que vas a enviar debe de contener los siguientes parámetros.
+### Obtén un token
+Antes de crear un Cargo, Plan o un Suscripción es necesario crear un `token` de tarjeta. Dentro de esta librería se encuentra una funcionalidad para generar 'tokens', debes de generar los 'tokens' directamente desde tu aplicación en Android, **debido a que es muy importante que los datos de tarjeta sean enviados desde el dispositivo de tus clientes directamente a los servidores de Culqi**, para no poner en riesgo información sensible.
 
-Parámetro | Descripción |
----------- | ----------- | -----------
-respuesta | Es la respuesta de Culqi cifrada.
 
-Y obtendrás como respuesta:
+```java
+//Obtén los datos de la tarjeta de tu cliente
+Card *card = [[Card alloc] init];
+card.number = @"4111111111111111";
+card.cvc = @"123";
+card.expMonth = @"09";
+card.expYear = @"2020";
+card.email = @"wmuro@me.com";
+card.lastName = @"Muro";
+card.firstName = @"William";
 
-### Parámetros de respuesta
+//Crea el token de tarjeta
+[culqi createToken:card completion:^(Token *token, NSError *error) {
 
-EL JSON que vas a recibir contiene los siguientes parámetros.
+        if (error) {
+             //Si recibes error, muestra a tu cliente el mensaje dirigido al usuario.
+            NSLog(@"¡Ocurrió un error!");
+            NSLog(@"Domain: %@ Code: %li", [error domain], [error code]);
+            NSLog(@"Descripción: %@", [error localizedDescription]);
+            
+        } else {
+            
+            NSLog(@"¡Registro exitoso!");
 
-Parámetro | Descripción |
----------- | ----------- | -----------
-codigo_respuesta | Es el código de respuesta de la venta, puedes ver los códigos de respuesta en la [documentación.](https://www.culqi.com/docs)
+            //Tienes que enviar el token.id a tu servidor para realizar un cargo o una suscripción.
+            NSLog(@"Token de tarjeta: %@", token.id);
+            
+            //También tienes información adicional que te puede ser útil.
+            NSLog(@"Número de tarjeta: %@", token.tokenCard.number);
+            NSLog(@"Marca de tarjeta: %@", token.tokenCard.brand);
+            NSLog(@"Correo electrónico: %@", token.email);
+            NSLog(@"Nombre: %@", token.tokenCard.firstName);
+            NSLog(@"Apellido: %@", token.tokenCard.lastName);
+            NSLog(@"Bin de tarjeta: %@", token.tokenCard.bin);
 
-### Pase a producción
+        }
+        
+    }];
 
-Aquí encontrarás toda la información necesaria para empezar a cargar tarjetas reales en nuestro [Entorno de Producción](http://beta.culqi.com/produccion/).
 
-## ¿Necesitas ayuda?
+```
+## Documentación
+¿Necesitas más información para integrar `culqi-android`? La documentación completa se encuentra en [https://developers.culqi.com](https://developers.culqi.com)
 
-Estamos felices de resolver cualquier duda o pregunta que tengas.
 
-Escribenos a soporte@culqi.com.
+## Licencia
 
-Respondemos todas tus dudas en máximo 24 horas.
+MIT.
