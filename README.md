@@ -24,30 +24,10 @@ Biblioteca Android oficial de Culqi, pagos simples en tu sitio web.
 
 ### Manualmente
 
-Clonar el repositorio o descargar el código fuente
+Incluir la carpeta `Culqi"` en tu proyecto. Debes hacer el llamado correctamente a la carpeta y/o archivo dependiendo de tu estructura.
 
-```bash
-$ git clone git@github.com:culqi/culqi-android.git
-```
-
-Ahora, incluir la carpeta `Culqi"` en tu proyecto. Debes hacer el llamado correctamente a la carpeta y/o archivo dependiendo de tu estructura.
-
-```java
-...
-import com.culqi.*
-...
-```
 
 ## Modo de uso
-
-Inicialmente hay que configurar la credencial `merchantCode`:
-
-```objective-c
-// Configurar tu Código de Comercio
-    culqi.setMerchantCode = "<Ingresa aquí tu código de comercio>";
-
-
-```
 
 ### Obtén un token
 Antes de crear un Cargo, Plan o un Suscripción es necesario crear un `token` de tarjeta. Dentro de esta librería se encuentra una funcionalidad para generar 'tokens', debes de generar los 'tokens' directamente desde tu aplicación en Android, **debido a que es muy importante que los datos de tarjeta sean enviados desde el dispositivo de tus clientes directamente a los servidores de Culqi**, para no poner en riesgo información sensible.
@@ -55,43 +35,27 @@ Antes de crear un Cargo, Plan o un Suscripción es necesario crear un `token` de
 
 ```java
 //Obtén los datos de la tarjeta de tu cliente
-Card *card = [[Card alloc] init];
-card.number = @"4111111111111111";
-card.cvc = @"123";
-card.expMonth = @"09";
-card.expYear = @"2020";
-card.email = @"wmuro@me.com";
-card.lastName = @"Muro";
-card.firstName = @"William";
+Card card = new Card();
+card.setApellido("Doe");
+card.setNombre("Jon");
+card.setCorreo_electronico("jon@culqi.com");
+card.setCvv(123);
+card.setNumero(4111111111111111);
+card.setA_exp(9);
+card.setM_exp(2020);
 
-//Crea el token de tarjeta
-[culqi createToken:card completion:^(Token *token, NSError *error) {
+String token = getToken(card, "<Ingresa aquí tu código de comercio");
 
-        if (error) {
-             //Si recibes error, muestra a tu cliente el mensaje dirigido al usuario.
-            NSLog(@"¡Ocurrió un error!");
-            NSLog(@"Domain: %@ Code: %li", [error domain], [error code]);
-            NSLog(@"Descripción: %@", [error localizedDescription]);
-            
-        } else {
-            
-            NSLog(@"¡Registro exitoso!");
+if (token.equals("error")) {
 
-            //Tienes que enviar el token.id a tu servidor para realizar un cargo o una suscripción.
-            NSLog(@"Token de tarjeta: %@", token.id);
-            
-            //También tienes información adicional que te puede ser útil.
-            NSLog(@"Número de tarjeta: %@", token.tokenCard.number);
-            NSLog(@"Marca de tarjeta: %@", token.tokenCard.brand);
-            NSLog(@"Correo electrónico: %@", token.email);
-            NSLog(@"Nombre: %@", token.tokenCard.firstName);
-            NSLog(@"Apellido: %@", token.tokenCard.lastName);
-            NSLog(@"Bin de tarjeta: %@", token.tokenCard.bin);
+      System.out.print("Ocurrió un error al crear el token");
 
-        }
-        
-    }];
+} else {
 
+       //Envía el token a tu servidor web y realiza el cargo o la suscripción.
+       System.out.print("Token: " + token);
+
+}
 
 ```
 ## Documentación
