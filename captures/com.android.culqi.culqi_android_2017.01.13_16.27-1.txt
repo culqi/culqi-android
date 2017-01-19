@@ -1,0 +1,34 @@
+Activity Resolver Table:
+  Non-Data Actions:
+      android.intent.action.MAIN:
+        1ba3365a com.android.culqi.culqi_android/.MainActivity
+
+Key Set Manager:
+  [com.android.culqi.culqi_android]
+      Signing KeySets: 41
+
+Packages:
+  Package [com.android.culqi.culqi_android] (22a9c08b):
+    userId=10058 gids=[3003]
+    pkg=Package{31738568 com.android.culqi.culqi_android}
+    codePath=/data/app/com.android.culqi.culqi_android-1
+    resourcePath=/data/app/com.android.culqi.culqi_android-1
+    legacyNativeLibraryDir=/data/app/com.android.culqi.culqi_android-1/lib
+    primaryCpuAbi=null
+    secondaryCpuAbi=null
+    versionCode=1 targetSdk=25
+    versionName=1.0
+    splits=[base]
+    applicationInfo=ApplicationInfo{1745ad81 com.android.culqi.culqi_android}
+    flags=[ DEBUGGABLE HAS_CODE ALLOW_CLEAR_USER_DATA ALLOW_BACKUP ]
+    dataDir=/data/data/com.android.culqi.culqi_android
+    supportsScreens=[small, medium, large, xlarge, resizeable, anyDensity]
+    timeStamp=2017-01-13 16:08:49
+    firstInstallTime=2017-01-12 17:57:32
+    lastUpdateTime=2017-01-13 16:08:50
+    signatures=PackageSignatures{164e5e26 [1771da67]}
+    permissionsFixed=true haveGids=true installStatus=1
+    pkgFlags=[ DEBUGGABLE HAS_CODE ALLOW_CLEAR_USER_DATA ALLOW_BACKUP ]
+    User 0:  installed=true hidden=false stopped=false notLaunched=false enabled=0
+    grantedPermissions:
+      android.permission.INTERNET

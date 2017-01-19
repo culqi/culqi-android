@@ -1,0 +1,34 @@
+Applications Memory Usage (kB):
+Uptime: 1130837 Realtime: 1130837
+
+** MEMINFO in pid 2321 [com.android.culqi.culqi_android] **
+                   Pss  Private  Private  Swapped     Heap     Heap     Heap
+                 Total    Dirty    Clean    Dirty     Size    Alloc     Free
+                ------   ------   ------   ------   ------   ------   ------
+  Native Heap     5886     5764        0        0    20480    17137     3342
+  Dalvik Heap    12098    12040        0        0    14715    10814     3901
+ Dalvik Other      232      232        0        0                           
+        Stack      748      748        0        0                           
+    Other dev        4        0        4        0                           
+     .so mmap     2115      152      404        0                           
+    .apk mmap      212        0       64        0                           
+    .ttf mmap       64        0       16        0                           
+    .dex mmap     3168        0     3076        0                           
+    .oat mmap     2484        0      764        0                           
+    .art mmap     1395      968        4        0                           
+   Other mmap       31        4        4        0                           
+      Unknown      142      140        0        0                           
+        TOTAL    28579    20048     4336        0    35195    27951     7243
+ 
+ Objects
+               Views:       24         ViewRootImpl:        1
+         AppContexts:        3           Activities:        1
+              Assets:        2        AssetManagers:        2
+       Local Binders:       20        Proxy Binders:       18
+       Parcel memory:        3         Parcel count:       12
+    Death Recipients:        0      OpenSSL Sockets:        0
+ 
+ SQL
+         MEMORY_USED:        0
+  PAGECACHE_OVERFLOW:        0          MALLOC_SIZE:        0
+ 

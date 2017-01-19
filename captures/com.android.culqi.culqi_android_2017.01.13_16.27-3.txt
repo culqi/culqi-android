@@ -1,0 +1,126 @@
+CURRENT STATS:
+System memory usage:
+  SOn /Norm: 1 samples:
+    Cached: 339MB min, 339MB avg, 339MB max
+    Free: 683MB min, 683MB avg, 683MB max
+    ZRam: 0.00 min, 0.00 avg, 0.00 max
+    Kernel: 86MB min, 86MB avg, 86MB max
+    Native: 63MB min, 63MB avg, 63MB max
+
+Per-Package Stats:
+  * com.android.culqi.culqi_android / u0a58 / v1:
+      * com.android.culqi.culqi_android / u0a58 / v1:
+               TOTAL: 99% (14MB-20MB-28MB/10MB-17MB-24MB over 10)
+                 Top: 99% (14MB-20MB-28MB/10MB-17MB-24MB over 10)
+
+Summary:
+  * com.android.culqi.culqi_android / u0a58 / v1:
+           TOTAL: 99% (14MB-20MB-28MB/10MB-17MB-24MB over 10)
+             Top: 99% (14MB-20MB-28MB/10MB-17MB-24MB over 10)
+
+Run time Stats:
+  SOn /Norm: +18m47s622ms (running)
+      TOTAL: +18m47s622ms
+
+Memory usage:
+  Kernel : 86MB (8 samples)
+  Native : 63MB (8 samples)
+  Top    : 169KB (6 samples)
+  ImpFg  : 48MB (14 samples)
+  ImpBg  : 10KB (4 samples)
+  Service: 28MB (28 samples)
+  Receivr: 15KB (34 samples)
+  Home   : 39MB (3 samples)
+  CchEmty: 134MB (19 samples)
+  Cached : 339MB (8 samples)
+  Free   : 683MB (8 samples)
+  TOTAL  : 1.4GB
+
+          Start time: 2017-01-13 16:08:44
+  Total elapsed time: +18m48s790ms (partial) libart.so
+
+AGGREGATED OVER LAST 24 HOURS:
+System memory usage:
+  SOn /Norm: 2 samples:
+    Cached: 337MB min, 338MB avg, 339MB max
+    Free: 681MB min, 682MB avg, 683MB max
+    ZRam: 0.00 min, 0.00 avg, 0.00 max
+    Kernel: 86MB min, 90MB avg, 94MB max
+    Native: 63MB min, 63MB avg, 63MB max
+
+Per-Package Stats:
+  * com.android.culqi.culqi_android / u0a58 / v1:
+      * com.android.culqi.culqi_android / u0a58 / v1:
+               TOTAL: 61% (13MB-17MB-28MB/9.6MB-14MB-24MB over 26)
+                 Top: 61% (13MB-17MB-28MB/9.6MB-14MB-24MB over 26)
+
+Summary:
+  * com.android.culqi.culqi_android / u0a58 / v1:
+           TOTAL: 61% (13MB-17MB-28MB/9.6MB-14MB-24MB over 26)
+             Top: 61% (13MB-17MB-28MB/9.6MB-14MB-24MB over 26)
+
+Run time Stats:
+  SOn /Norm: +1h18m58s232ms
+      TOTAL: +1h18m58s232ms
+
+Memory usage:
+  Kernel : 90MB (16 samples)
+  Native : 63MB (16 samples)
+  Persist: 96MB (18 samples)
+  Top    : 24MB (56 samples)
+  ImpFg  : 89MB (58 samples)
+  ImpBg  : 5.4KB (12 samples)
+  Service: 20MB (64 samples)
+  Receivr: 8.1KB (72 samples)
+  Home   : 22MB (9 samples)
+  CchEmty: 115MB (66 samples)
+  Cached : 338MB (16 samples)
+  Free   : 682MB (16 samples)
+  TOTAL  : 1.5GB
+  ServRst: 96 (3 samples)
+
+          Start time: 2017-01-13 10:21:29
+  Total elapsed time: +1h19m0s815ms (partial) libart.so
+
+AGGREGATED OVER LAST 3 HOURS:
+System memory usage:
+  SOn /Norm: 2 samples:
+    Cached: 337MB min, 338MB avg, 339MB max
+    Free: 681MB min, 682MB avg, 683MB max
+    ZRam: 0.00 min, 0.00 avg, 0.00 max
+    Kernel: 86MB min, 90MB avg, 94MB max
+    Native: 63MB min, 63MB avg, 63MB max
+
+Per-Package Stats:
+  * com.android.culqi.culqi_android / u0a58 / v1:
+      * com.android.culqi.culqi_android / u0a58 / v1:
+               TOTAL: 61% (13MB-17MB-28MB/9.6MB-14MB-24MB over 26)
+                 Top: 61% (13MB-17MB-28MB/9.6MB-14MB-24MB over 26)
+
+Summary:
+  * com.android.culqi.culqi_android / u0a58 / v1:
+           TOTAL: 61% (13MB-17MB-28MB/9.6MB-14MB-24MB over 26)
+             Top: 61% (13MB-17MB-28MB/9.6MB-14MB-24MB over 26)
+
+Run time Stats:
+  SOn /Norm: +1h18m58s249ms
+      TOTAL: +1h18m58s249ms
+
+Memory usage:
+  Kernel : 90MB (16 samples)
+  Native : 63MB (16 samples)
+  Persist: 96MB (18 samples)
+  Top    : 24MB (56 samples)
+  ImpFg  : 89MB (58 samples)
+  ImpBg  : 5.4KB (12 samples)
+  Service: 20MB (64 samples)
+  Receivr: 8.1KB (72 samples)
+  Home   : 22MB (9 samples)
+  CchEmty: 115MB (66 samples)
+  Cached : 338MB (16 samples)
+  Free   : 682MB (16 samples)
+  TOTAL  : 1.5GB
+  ServRst: 96 (3 samples)
+
+          Start time: 2017-01-13 10:21:29
+  Total elapsed time: +1h19m0s832ms (partial) libart.so
