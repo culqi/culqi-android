@@ -1,0 +1,32 @@
+TASK com.android.culqi.culqi_android id=4
+  ACTIVITY com.android.culqi.culqi_android/.MainActivity 1d84cdac pid=2321
+    Local FragmentActivity 38f63cb1 State:
+      mCreated=truemResumed=true mStopped=false mReallyStopped=false
+      mLoadersStarted=true
+    FragmentManager misc state:
+      mHost=android.support.v4.app.FragmentActivity$HostCallbacks@38be72f9
+      mContainer=android.support.v4.app.FragmentActivity$HostCallbacks@38be72f9
+      mCurState=5 mStateSaved=false mDestroyed=false
+    View Hierarchy:
+      com.android.internal.policy.impl.PhoneWindow$DecorView{244af7c9 V.E..... ... 0,0-1080,1920}
+        android.widget.LinearLayout{3e2c2856 V.E..... ... 0,0-1080,1794}
+          android.view.ViewStub{55a73e2 G.E..... ... 0,0-0,0 #1020373}
+          android.widget.FrameLayout{326c0ea9 V.E..... ... 0,66-1080,1794}
+            android.support.v7.widget.ActionBarOverlayLayout{242fec2e V.E..... ... 0,0-1080,1728 #7f0b0045 app:id/decor_content_parent}
+              android.support.v7.widget.ContentFrameLayout{cdec65 V.E..... ... 0,147-1080,1728 #1020002 android:id/content}
+                android.widget.RelativeLayout{1f877748 V.E..... ... 0,0-1080,1581 #7f0b0056 app:id/activity_main}
+                  android.support.v7.widget.AppCompatEditText{bbd5306 VFED..CL ... 42,42-1038,183 #7f0b0057 app:id/txt_cardnumber}
+                  android.support.v7.widget.AppCompatEditText{fa3e760 VFED..CL ... 42,233-357,374 #7f0b0058 app:id/txt_month}
+                  android.support.v7.widget.AppCompatEditText{2d88f419 VFED..CL ... 394,233-709,374 #7f0b0059 app:id/txt_year}
+                  android.support.v7.widget.AppCompatEditText{205bcde VFED..CL ... 751,233-1038,374 #7f0b005a app:id/txt_cvv}
+                  android.support.v7.widget.AppCompatEditText{db13ebf VFED..CL ... 42,442-515,583 #7f0b005b app:id/txt_name}
+                  android.support.v7.widget.AppCompatEditText{1c50198c VFED..CL ... 541,442-1038,583 #7f0b005c app:id/txt_lastname}
+                  android.support.v7.widget.AppCompatEditText{42bb8d5 VFED..CL F.. 42,641-1038,782 #7f0b005d app:id/txt_email}
+                  android.support.v7.widget.AppCompatButton{22acc8ea VFED..C. ... 42,863-273,989 #7f0b005e app:id/btn_try}
+              android.support.v7.widget.ActionBarContainer{1d0689b6 V.ED.... ... 0,0-1080,147 #7f0b0046 app:id/action_bar_container}
+                android.support.v7.widget.Toolbar{30698b42 V.E..... ... 0,0-1080,147 #7f0b0047 app:id/action_bar}
+                  android.support.v7.widget.AppCompatTextView{10afe890 V.ED.... ... 42,38-366,109}
+                  android.support.v7.widget.ActionMenuView{9d2fdbc V.E..... ... 1080,0-1080,147}
+                android.support.v7.widget.ActionBarContextView{30539dcb G.E..... ... 0,0-0,0 #7f0b0048 app:id/action_context_bar}
+        android.view.View{622cc66 V.ED.... ... 0,0-1080,66 #102002f android:id/statusBarBackground}
+        android.view.View{33fc4ba7 V.ED.... ... 0,1794-1080,1920 #1020030 android:id/navigationBarBackground}
