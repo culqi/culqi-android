@@ -37,15 +37,14 @@ public class Token {
 
         JSONObject jsonBody = new JSONObject();
         try {
+            // change for the las version (work in progress)
             jsonBody = new JSONObject();
             jsonBody.put("card_number", card_number);
-            jsonBody.put("currency_code", currency_code);
             jsonBody.put("cvv", cvv);
             jsonBody.put("expiration_month", expiration_month);
             jsonBody.put("expiration_year", expiration_year);
-            jsonBody.put("last_name", last_name);
             jsonBody.put("email", email);
-            jsonBody.put("first_name", first_name);
+            jsonBody.put("fingerprint","dsf234dfeswdes");
         } catch (Exception ex){
             Log.v("", "ERROR: "+ex.getMessage());
         }
