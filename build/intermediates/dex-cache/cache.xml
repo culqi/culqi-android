@@ -3,6 +3,33 @@
 
     <item
         is-multidex="true"
+        jar="/home/culqi/Documents/culqi-android/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/25.1.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="e79aa3d9a16f8c9f16377c0608de70a8f31e5d80">
+        <dex dex="/home/culqi/Documents/culqi-android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-25.1.0_09d16d063cf1e87ac57816074d65a2c9338cf3c3/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/culqi/Documents/culqi-android/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.1.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="f02263e35e52668dd17b73bf961437e3d562b35f">
+        <dex dex="/home/culqi/Documents/culqi-android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-media-compat-25.1.0_53ae4a4574a678112f44beae7c816597d6eb6da5/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/culqi/Documents/culqi-android/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="fa2b35977a419e4085845478a4ec9d938114d334">
+        <dex dex="/home/culqi/Documents/culqi-android/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_77e03aab0d3673efcb4460584e07b76089bcb9b6/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/home/culqi/Culqi-Android/app/build/intermediates/exploded-aar/com.android.volley/volley/1.0.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
@@ -21,6 +48,24 @@
     </item>
     <item
         is-multidex="true"
+        jar="/home/culqi/Documents/culqi-android/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/25.1.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="6fb6ac3e8d3b9013819920d9ea11f3803c4c0033">
+        <dex dex="/home/culqi/Documents/culqi-android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-25.1.0_62bfe55a20c855df37734882bcb9b084ddbb9b9a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/culqi/Documents/culqi-android/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.1.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="aee64634871d88a419d59eb743c1258a60f19700">
+        <dex dex="/home/culqi/Documents/culqi-android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-25.1.0_72c2355b43ccc6b5c2f893658ad8fcbd5d3784ff/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/home/culqi/Culqi-Android/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
@@ -30,12 +75,39 @@
     </item>
     <item
         is-multidex="true"
+        jar="/home/culqi/Documents/culqi-android/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="549ae0e2b207e3c48f409caceb86bada196b22d3">
+        <dex dex="/home/culqi/Documents/culqi-android/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_b7106b3a73eecd7c090b16339a773b476ed616b7/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/culqi/Documents/culqi-android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.1.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="1630658fbc2d222b988603c27b4a4249586fbfe7">
+        <dex dex="/home/culqi/Documents/culqi-android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-25.1.0_1d1dc37d87f018f1d035a23fde2df8c4ac05a546/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/home/culqi/Culqi-Android/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.1.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
         sha1="ca3c7aa31e2726a400a6e552b93cb9f63c9a1e6d">
         <dex dex="/home/culqi/Culqi-Android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-25.1.0_8bf119d81dac98b803ecab933294f9fb2f9b3b22/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/culqi/Documents/culqi-android/app/build/intermediates/exploded-aar/com.android.support/support-v4/25.1.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/home/culqi/Documents/culqi-android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-25.1.0_4eee67b458dd80611cb8dd43c07546a33c0ed33c/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -57,12 +129,39 @@
     </item>
     <item
         is-multidex="true"
+        jar="/home/culqi/Documents/culqi-android/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.1.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="0a0ef86b7fa568a52bf6214a0326ca1f1d618da7">
+        <dex dex="/home/culqi/Documents/culqi-android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-utils-25.1.0_1143b5fa4cf6ec6ada0ea1e5f064b795ba509eaf/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/culqi/Documents/culqi-android/app/build/intermediates/exploded-aar/com.android.volley/volley/1.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="2cd4b982617e544728de0782d718a58ce1b06e3f">
+        <dex dex="/home/culqi/Documents/culqi-android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.volley-volley-1.0.0_3a6d33a34ad452e688ee88c3d74f7afe348942fe/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/home/culqi/Culqi-Android/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.1.0/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
         sha1="f02263e35e52668dd17b73bf961437e3d562b35f">
         <dex dex="/home/culqi/Culqi-Android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-media-compat-25.1.0_da8f97651f42487345c9d95ecb6c2d0f0d1b7539/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/culqi/Documents/culqi-android/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.1.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="ca3c7aa31e2726a400a6e552b93cb9f63c9a1e6d">
+        <dex dex="/home/culqi/Documents/culqi-android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-25.1.0_101d905beebd6cdf0fdced7e6a3b01fff3f78f73/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -99,6 +198,15 @@
         revision="25.0.2"
         sha1="64cb6b229a8bdfd907bc8dd46839a0053e4c018d">
         <dex dex="/home/culqi/Culqi-Android/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-25.1.0_d0caad493f9be049e534b142a563d46392fac42d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/culqi/Documents/culqi-android/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.1.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="2a53c4f3518116b8c6aee0e477233f0f7da8616f">
+        <dex dex="/home/culqi/Documents/culqi-android/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-25.1.0_c09a58359d9f92f8ee684e22beb34852b36b37e2/classes.dex" />
     </item>
     <item
         is-multidex="true"

@@ -5,6 +5,7 @@ import android.content.Context;
 import android.util.Log;
 import android.widget.TextView;
 
+import com.android.culqi.culqi_android.MainActivity;
 import com.android.volley.AuthFailureError;
 import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
@@ -18,6 +19,7 @@ import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.UUID;
 
 /**
  * Created by culqi on 1/19/17.
@@ -29,22 +31,32 @@ public class Token {
 
     private static final String URL = "/tokens/";
 
-    public void createToken(Context context, final ProgressDialog progress, final String cod_commerce, final TextView result, String card_number,
-                            String currency_code, String cvv, int expiration_month, int expiration_year,
-                            String last_name, String email, String first_name) {
+    private TokenCallback listener;
+
+    public Token(){
+        this.listener = null;
+    }
+
+    public void createToken(Context context, final String cod_commerce, Card card, final TokenCallback listener) {
+
+        this.listener = listener;
 
         RequestQueue requestQueue = Volley.newRequestQueue(context);
 
         JSONObject jsonBody = new JSONObject();
         try {
-            // change for the las version (work in progress)
             jsonBody = new JSONObject();
-            jsonBody.put("card_number", card_number);
-            jsonBody.put("cvv", cvv);
-            jsonBody.put("expiration_month", expiration_month);
-            jsonBody.put("expiration_year", expiration_year);
-            jsonBody.put("email", email);
-            jsonBody.put("fingerprint","dsf234dfeswdes");
+            jsonBody.put("card_number", card.getCard_number());
+            jsonBody.put("cvv", card.getCvv());
+            jsonBody.put("expiration_month", card.getExpiration_month());
+            jsonBody.put("expiration_year", card.getExpiration_year());
+            jsonBody.put("email", card.getEmail());
+            jsonBody.put("fingerprint", UUID.randomUUID().toString().replaceAll("-", ""));
+
+            // have to remove
+            jsonBody.put("currency_code", "PEN");
+            jsonBody.put("first_name", "WILL");
+            jsonBody.put("last_name", "WALL");
         } catch (Exception ex){
             Log.v("", "ERROR: "+ex.getMessage());
         }
@@ -53,18 +65,15 @@ public class Token {
             @Override
             public void onResponse(JSONObject response) {
                 try {
-                    progress.hide();
-                    result.setText(response.get("id").toString());
+                    listener.onSuccess(response);
                 } catch (Exception ex){
-                    progress.hide();
-                    Log.v("", response.toString());
+                    listener.onError(ex);
                 }
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                progress.hide();
-                Log.v("", error.toString());
+                listener.onError(error);
             }
         }) {
             @Override
