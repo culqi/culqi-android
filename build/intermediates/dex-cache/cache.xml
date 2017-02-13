@@ -25,7 +25,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="fa2b35977a419e4085845478a4ec9d938114d334">
+        sha1="c6ca91323231ebcfb66e80bd142058d8c3ac29b1">
         <dex dex="/home/culqi/Documents/culqi-android/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_77e03aab0d3673efcb4460584e07b76089bcb9b6/classes.dex" />
     </item>
     <item
@@ -79,7 +79,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="549ae0e2b207e3c48f409caceb86bada196b22d3">
+        sha1="73d6d3ba7b8e77b712d803bdc09c908f48942a13">
         <dex dex="/home/culqi/Documents/culqi-android/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_b7106b3a73eecd7c090b16339a773b476ed616b7/classes.dex" />
     </item>
     <item

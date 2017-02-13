@@ -31,13 +31,16 @@ public class Token {
 
     private static final String URL = "/tokens/";
 
+    private String api_key;
+
     private TokenCallback listener;
 
-    public Token(){
+    public Token(String api_key){
+        this.api_key = api_key;
         this.listener = null;
     }
 
-    public void createToken(Context context, final String cod_commerce, Card card, final TokenCallback listener) {
+    public void createToken(Context context, Card card, final TokenCallback listener) {
 
         this.listener = listener;
 
@@ -51,12 +54,6 @@ public class Token {
             jsonBody.put("expiration_month", card.getExpiration_month());
             jsonBody.put("expiration_year", card.getExpiration_year());
             jsonBody.put("email", card.getEmail());
-            jsonBody.put("fingerprint", UUID.randomUUID().toString().replaceAll("-", ""));
-
-            // have to remove
-            jsonBody.put("currency_code", "PEN");
-            jsonBody.put("first_name", "WILL");
-            jsonBody.put("last_name", "WALL");
         } catch (Exception ex){
             Log.v("", "ERROR: "+ex.getMessage());
         }
@@ -80,7 +77,7 @@ public class Token {
             public Map<String, String> getHeaders() throws AuthFailureError {
                 Map<String, String> headers = new HashMap<>();
                 headers.put("Content-Type", "application/json; charset=utf-8");
-                headers.put("Authorization", "Bearer " + cod_commerce);
+                headers.put("Authorization", "Bearer " + Token.this.api_key);
                 return headers;
             }
 
