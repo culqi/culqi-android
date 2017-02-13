@@ -35,8 +35,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        token = new Token();
-
         validation = new Validation();
 
         progress = new ProgressDialog(this);
@@ -144,7 +142,9 @@ public class MainActivity extends AppCompatActivity {
 
             Card card = new Card(txtcardnumber.getText().toString(), txtcvv.getText().toString(), 9, 2020, txtemail.getText().toString());
 
-            token.createToken(getApplicationContext(), "pk_test_vzMuTHoueOMlgUPj", card, new TokenCallback() {
+            Token token = new Token("pk_test_vzMuTHoueOMlgUPj");
+
+            token.createToken(getApplicationContext(), card, new TokenCallback() {
                 @Override
                 public void onSuccess(JSONObject token) {
                     try {
