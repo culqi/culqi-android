@@ -1,7 +1,5 @@
 package com.android.culqi.culqi_android.Culqi;
 
-import com.android.volley.VolleyError;
-
 import org.json.JSONObject;
 
 /**

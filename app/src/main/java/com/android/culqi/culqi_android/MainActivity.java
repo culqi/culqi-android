@@ -6,7 +6,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.InputFilter;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -15,13 +14,10 @@ import com.android.culqi.culqi_android.Culqi.Card;
 import com.android.culqi.culqi_android.Culqi.Token;
 import com.android.culqi.culqi_android.Culqi.TokenCallback;
 import com.android.culqi.culqi_android.Validation.Validation;
-import com.android.volley.VolleyError;
 
 import org.json.JSONObject;
 
 public class MainActivity extends AppCompatActivity {
-
-    Token token;
 
     Validation validation;
 

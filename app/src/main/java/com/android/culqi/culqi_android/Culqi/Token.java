@@ -1,11 +1,8 @@
 package com.android.culqi.culqi_android.Culqi;
 
-import android.app.ProgressDialog;
 import android.content.Context;
 import android.util.Log;
-import android.widget.TextView;
 
-import com.android.culqi.culqi_android.MainActivity;
 import com.android.volley.AuthFailureError;
 import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
@@ -19,7 +16,6 @@ import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.UUID;
 
 /**
  * Created by culqi on 1/19/17.
