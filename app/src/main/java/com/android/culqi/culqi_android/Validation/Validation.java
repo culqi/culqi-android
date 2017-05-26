@@ -30,14 +30,11 @@ public class Validation {
 
     public int bin(String bin, final TextView kind_card) {
 
-        if(bin.length() > 0) {
-            if(Integer.valueOf(""+bin.charAt(0)) == 3) {
-                kind_card.setText("AMEX");
-                return 4;
-            } else if(Integer.valueOf(""+bin.charAt(0)) == 4) {
+        if(bin.length() > 1) {
+            if(Integer.valueOf(bin.substring(0,2)) == 41) {
                 kind_card.setText("VISA");
                 return 3;
-            } else if (Integer.valueOf(""+bin.charAt(0)) == 5) {
+            } else if (Integer.valueOf(bin.substring(0,2)) == 51) {
                 kind_card.setText("MasterCard");
                 return 3;
             } else {
