@@ -54,7 +54,7 @@ public class Token {
             Log.v("", "ERROR: "+ex.getMessage());
         }
 
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, config.url_base+URL,jsonBody, new Response.Listener<JSONObject>(){
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, config.url_base_secure+URL,jsonBody, new Response.Listener<JSONObject>(){
             @Override
             public void onResponse(JSONObject response) {
                 try {
