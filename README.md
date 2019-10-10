@@ -14,24 +14,14 @@ Una vez que haya recopilado la información de un cliente, tendrá que intercamb
 
 ## Creación de Token desde un formulario personalizado
 
-Puede crear tokens utilizando el método utilizando el método de instancia Culqi createToken
+Puede crear tokens utilizando el método utilizando el método del ViewModel llamado getToken()
 Pasando el número de la tarjeta, cvv, la fecha de vencimiento y un correo
 
-```java
-Card card = new Card(“411111111111111”, “123”, 9, 2020, “wm@wm.com”);
+```Kotlin
+viewModel.getToken(“411111111111111”, “123”, "09", 2020, “wm@wm.com”)
 
-Token token = new Token("{CODIGO COMERCIO}");
-
-token.createToken(getApplicationContext(), card, new TokenCallback() {
-      @Override
-      public void onSuccess(JSONObject token) {
-            // get Token
-            token.get("id").toString()
-      }
-      @Override
-      public void onError(Exception error) {
-      }
-});
+//El CODIGO DEL COMERCIO se ingresa en build.gradle dentro de la carpeta app (Se reemplaza el <CODIGO COMERCIO> por el CODIGO DEL COMERCIO
+//buildConfigField('String', 'AUTHORIZATION', '"Bearer <CODIGO COMERCIO>"')
 ```
 
 ## Usando Tokens
