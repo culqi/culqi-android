@@ -1,52 +1,42 @@
-package com.android.culqi.culqi_android.validation
+package com.android.culqi.culqi_android.utils
 
-import android.widget.TextView
 import java.util.*
 
 class Validation {
 
-    fun bin(bin: String, kind_card: TextView): Int {
+    fun bin(bin: String): Pair<String,Int> {
 
         if (bin.length > 1) {
             when (Integer.valueOf(bin.substring(0, 2))) {
                 36 -> {
-                    kind_card.text = "Diners Club"
-                    return 3
-                }
-                38 -> {
-                    kind_card.text = "Diners Club"
-                    return 3
+                    return Pair("Diners Club",3)
                 }
                 37 -> {
-                    kind_card.text = "AMEX"
-                    return 3
+                    return Pair("Diners Club",3)
+                }
+                38 -> {
+                    return Pair("Diners Club",3)
                 }
                 41 -> {
-                    kind_card.text = "VISA"
-                    return 3
+                    return Pair("VISA",3)
                 }
                 51 -> {
-                    kind_card.text = "MasterCard"
-                    return 3
+                    return Pair("MasterCard",3)
                 }
             }
-        } else {
-            kind_card.text = ""
         }
 
         if (bin.length > 2) {
             when (Integer.valueOf(bin.substring(0, 3))) {
                 300 -> {
-                    kind_card.text = "Diners Club"
-                    return 3
+                    return Pair("Diners Club",3)
                 }
                 305 -> {
-                    kind_card.text = "Diners Club"
-                    return 3
+                    return Pair("Diners Club",3)
                 }
             }
         }
-        return 0
+        return Pair("",0)
     }
 
     fun month(month: String): Boolean {

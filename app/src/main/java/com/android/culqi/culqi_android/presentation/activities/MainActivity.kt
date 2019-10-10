@@ -1,28 +1,36 @@
-package com.android.culqi.culqi_android
+package com.android.culqi.culqi_android.presentation.activities
 
 import android.app.ProgressDialog
 import android.os.Bundle
 import android.text.Editable
 import android.text.InputFilter
 import android.text.TextWatcher
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import com.android.culqi.culqi_android.culqi.Card
-import com.android.culqi.culqi_android.culqi.Token
-import com.android.culqi.culqi_android.culqi.TokenCallback
-import com.android.culqi.culqi_android.validation.Validation
+import androidx.lifecycle.Observer
+import com.android.culqi.culqi_android.R
+import com.android.culqi.culqi_android.data.datasource.rest.request.CardRequestData
+import com.android.culqi.culqi_android.presentation.viewmodel.MainViewModel
+import com.android.culqi.culqi_android.presentation.viewmodel.viewstate.MainVS
+import com.android.culqi.culqi_android.utils.Validation
 import kotlinx.android.synthetic.main.activity_main.*
+import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.json.JSONObject
 
 class MainActivity : AppCompatActivity() {
+
+
+    private val viewModel: MainViewModel by viewModel()
+    private lateinit var progress:ProgressDialog
 
     internal lateinit var validation: Validation
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
+        getViewModelComplete()
         validation = Validation()
 
-        val progress = ProgressDialog(this)
+        progress = ProgressDialog(this)
         progress.setMessage("Validando informacion de la tarjeta")
         progress.setCancelable(false)
         progress.setProgressStyle(ProgressDialog.STYLE_SPINNER)
@@ -48,9 +56,10 @@ class MainActivity : AppCompatActivity() {
                     etMainCardNumber.setBackgroundResource(R.drawable.border_error)
                 }
 
-                val cvv = validation.bin(text, tvMainKindCard)
-                if (cvv > 0) {
-                    etMainCVV.filters = arrayOf<InputFilter>(InputFilter.LengthFilter(cvv))
+                val cvv = validation.bin(text)
+                tvMainKindCard.text = cvv.first
+                if (cvv.second > 0) {
+                    etMainCVV.filters = arrayOf<InputFilter>(InputFilter.LengthFilter(cvv.second))
                     etMainCVV.isEnabled = true
                 } else {
                     etMainCVV.isEnabled = false
@@ -91,28 +100,24 @@ class MainActivity : AppCompatActivity() {
 
         btMainCreateToken.setOnClickListener {
             progress.show()
-
-            val card = Card(etMainCardNumber.text.toString(), etMainCVV.text.toString(), 9, 2020, etMainEmail.text.toString())
-
-            val token = Token("pk_test_vzMuTHoueOMlgUPj")
-
-            token.createToken(applicationContext, card, object : TokenCallback {
-                override fun onSuccess(token: JSONObject) {
-                    try {
-                        tvMainTokenId.text = token.get("id").toString()
-                    } catch (ex: Exception) {
-                        progress.hide()
-                    }
-
-                    progress.hide()
-                }
-
-                override fun onError(error: Exception) {
-                    progress.hide()
-                }
-            })
+            viewModel.getToken(etMainCardNumber.text.toString(), etMainCVV.text.toString(), "09", 2020, etMainEmail.text.toString())
         }
 
+    }
+
+    private fun getViewModelComplete() {
+        viewModel.state.observe(this, Observer {
+            when (it) {
+                is MainVS.GetToken -> {
+                    progress.hide()
+                    tvMainTokenId.text = it.token.id
+                }
+                is MainVS.OnError -> {
+                    progress.hide()
+                    Log.d("Error", "${it.error.message}")
+                }
+            }
+        })
     }
 
 }
