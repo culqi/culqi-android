@@ -16,7 +16,7 @@ android {
 
 
         buildConfigField('String', 'URL_SERVER', '"https://secure.culqi.com/v2/"')
-        buildConfigField('String', 'AUTHORIZATION', '"Bearer <PUBLIC_KEY>"')
+        buildConfigField('String', 'AUTHORIZATION', '"Bearer <CODIGO COMERCIO>"')
         buildConfigField('String', 'CONTENT_TYPE', '"application/json; charset=utf-8"')
     }
     compileOptions {
