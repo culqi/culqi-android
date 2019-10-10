@@ -20,11 +20,11 @@ Pasando el número de la tarjeta, cvv, la fecha de vencimiento y un correo
 ```Kotlin
 viewModel.getToken(
                     CardVM(
-                            cardNumber = etMainCardNumber.text.toString(),
-                            cvv = etMainCVV.text.toString(),
+                            cardNumber = "4111111111111111",
+                            cvv = "123",
                             expirationMonth = "09",
                             expirationYear = 2020,
-                            email = etMainEmail.text.toString()
+                            email = "correo@dominio.com"
                     )
             )
 
