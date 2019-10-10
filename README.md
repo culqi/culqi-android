@@ -14,11 +14,19 @@ Una vez que haya recopilado la información de un cliente, tendrá que intercamb
 
 ## Creación de Token desde un formulario personalizado
 
-Puede crear tokens utilizando el método utilizando el método del ViewModel llamado getToken()
+Puede crear tokens utilizando el método utilizando el método del ViewModel llamado getToken() enviando un objeto CardVM
 Pasando el número de la tarjeta, cvv, la fecha de vencimiento y un correo
 
 ```Kotlin
-viewModel.getToken(“411111111111111”, “123”, "09", 2020, “wm@wm.com”)
+viewModel.getToken(
+                    CardVM(
+                            cardNumber = etMainCardNumber.text.toString(),
+                            cvv = etMainCVV.text.toString(),
+                            expirationMonth = "09",
+                            expirationYear = 2020,
+                            email = etMainEmail.text.toString()
+                    )
+            )
 
 //El CODIGO DEL COMERCIO se ingresa en build.gradle dentro de la carpeta app (Se reemplaza el <CODIGO COMERCIO> por el CODIGO DEL COMERCIO
 //buildConfigField('String', 'AUTHORIZATION', '"Bearer <CODIGO COMERCIO>"')
