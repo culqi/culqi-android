@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import com.android.culqi.culqi_android.R
 import com.android.culqi.culqi_android.data.datasource.rest.request.CardRequestData
+import com.android.culqi.culqi_android.presentation.model.CardVM
 import com.android.culqi.culqi_android.presentation.viewmodel.MainViewModel
 import com.android.culqi.culqi_android.presentation.viewmodel.viewstate.MainVS
 import com.android.culqi.culqi_android.utils.Validation
@@ -100,7 +101,15 @@ class MainActivity : AppCompatActivity() {
 
         btMainCreateToken.setOnClickListener {
             progress.show()
-            viewModel.getToken(etMainCardNumber.text.toString(), etMainCVV.text.toString(), "09", 2020, etMainEmail.text.toString())
+            viewModel.getToken(
+                    CardVM(
+                            cardNumber = etMainCardNumber.text.toString(),
+                            cvv = etMainCVV.text.toString(),
+                            expirationMonth = "09",
+                            expirationYear = 2020,
+                            email = etMainEmail.text.toString()
+                    )
+            )
         }
 
     }
