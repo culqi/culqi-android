@@ -1,4 +1,4 @@
-package com.android.culqi.culqi_android.data.datasource.rest.response
+package com.android.culqi.culqi_android.model
 
 import com.squareup.moshi.JsonClass
 

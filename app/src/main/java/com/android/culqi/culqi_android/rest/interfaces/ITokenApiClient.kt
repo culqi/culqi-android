@@ -1,8 +1,8 @@
 package com.android.culqi.culqi_android.rest.interfaces
 
 import com.android.culqi.culqi_android.BuildConfig
-import com.android.culqi.culqi_android.data.datasource.rest.request.Card
-import com.android.culqi.culqi_android.data.datasource.rest.response.Token
+import com.android.culqi.culqi_android.model.Card
+import com.android.culqi.culqi_android.model.Token
 import io.reactivex.Single
 import retrofit2.http.Body
 import retrofit2.http.Header

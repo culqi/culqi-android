@@ -1,8 +1,7 @@
-package com.android.culqi.culqi_android.data.datasource.rest
+package com.android.culqi.culqi_android.rest
 
-import com.android.culqi.culqi_android.data.datasource.rest.request.Card
-import com.android.culqi.culqi_android.data.datasource.rest.response.Token
-import com.android.culqi.culqi_android.rest.TokenApiClient
+import com.android.culqi.culqi_android.model.Card
+import com.android.culqi.culqi_android.model.Token
 import io.reactivex.Single
 
 class TokenRestDataStore {
