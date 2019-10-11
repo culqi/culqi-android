@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Culqi-Android</string>
+    <!--region Main Activity-->
+    <string name="main_card_number">Card Number</string>
+    <string name="main_month">Mes</string>
+    <string name="main_year">Año</string>
+    <string name="main_cvv">CVV</string>
+    <string name="main_email">Correo electronico</string>
+    <string name="main_create_token">Crear Token</string>
+    <!--endregion-->
 </resources>
