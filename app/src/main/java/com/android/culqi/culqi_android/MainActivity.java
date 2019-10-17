@@ -2,7 +2,7 @@ package com.android.culqi.culqi_android;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.InputFilter;
 import android.text.TextWatcher;
@@ -138,7 +138,7 @@ public class MainActivity extends AppCompatActivity {
 
             Card card = new Card(txtcardnumber.getText().toString(), txtcvv.getText().toString(), 9, 2020, txtemail.getText().toString());
 
-            Token token = new Token("pk_test_vzMuTHoueOMlgUPj");
+            Token token = new Token("sk_test_yXVtdMtTz76KR4VH");
 
             token.createToken(getApplicationContext(), card, new TokenCallback() {
                 @Override
