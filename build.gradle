@@ -2,10 +2,11 @@
 
 buildscript {
     repositories {
+        google()
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.3.1'
+        classpath 'com.android.tools.build:gradle:3.3.2'
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -14,10 +15,27 @@ buildscript {
 
 allprojects {
     repositories {
+        google()
         jcenter()
     }
 }
 
 task clean(type: Delete) {
     delete rootProject.buildDir
+}
+
+ext{
+    qMinSdkVersion=15
+    qTargetSdkVersion = 29
+    qCompileSdkVersion = 29
+
+    qAndroidXVersion = '1.0.0'
+    qAppCompatVersion = '1.0.2'
+    qVolleyVersion = '1.1.1'
+
+    qRunnerVersion = '1.2.0'
+    qEspressoVersion = '3.2.0'
+    qJunitVersion = '4.12'
+
+
 }
