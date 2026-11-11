@@ -138,7 +138,7 @@ public class MainActivity extends AppCompatActivity {
 
             Card card = new Card(txtcardnumber.getText().toString(), txtcvv.getText().toString(), 9, 2020, txtemail.getText().toString());
 
-            Token token = new Token("INSERTE_SU_LLAVE_PRIVADA");
+            Token token = new Token("INSERTE_SU_LLAVE_PUBLICA");
 
             token.createToken(getApplicationContext(), card, new TokenCallback() {
                 @Override

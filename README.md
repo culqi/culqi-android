@@ -7,6 +7,10 @@
 * Android 4.0 o superior.
 * Credenciales de comercio Culqi (1).
 
+## Configurar credenciales de prueba
+
+El código de ejemplo usa marcadores como `INSERTE_SU_LLAVE_PUBLICA` y `INSERTE_SU_LLAVE_PRIVADA`, no credenciales funcionales. Para probar, usa tus propias llaves `pk_test_`/`sk_test_`; estas pruebas realizan llamadas reales a la API. No hagas commit de llaves. No incluyas una llave privada en la aplicación: las operaciones que la requieran deben realizarse desde tu backend.
+
 ## Construye tu propio formulario
 
 Si crea su propio formulario de pago, deberá recopilar al menos los números de tarjeta y las fechas de vencimiento de sus clientes. Es probable que también recoger el CVV para evitar el fraude.
@@ -20,7 +24,7 @@ Pasando el número de la tarjeta, cvv, la fecha de vencimiento y un correo
 ```java
 Card card = new Card(“411111111111111”, “123”, 9, 2020, “wm@wm.com”);
 
-Token token = new Token("{CODIGO COMERCIO}");
+Token token = new Token("INSERTE_SU_LLAVE_PUBLICA");
 
 token.createToken(getApplicationContext(), card, new TokenCallback() {
       @Override
